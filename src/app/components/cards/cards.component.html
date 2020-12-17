@@ -1,0 +1,14 @@
+<div class="card-columns">
+    <div *ngFor="let release of Items" class="card btn"(click)="verArtista(release)">
+        <img [src]="release.images | noImage" alt="" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{release.name}}</h5>
+            <p class="card-text" *ngIf="release.artists">
+                <span *ngFor="let artist of release.artists" class="badge badge-pill badge-success">{{artist.name}}</span>
+            </p>
+            <p class="card-text" *ngIf="release.genres"> 
+                <span *ngFor="let genre of release.genres" class="badge badge-pill badge-success">{{release.genre}}</span>
+            </p>
+        </div>
+    </div>
+</div>

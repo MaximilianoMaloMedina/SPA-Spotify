@@ -1,0 +1,8 @@
+<div class="row m-5">
+    <div class="col-12">
+        <input type="text" #term (keyup)="buscar(term.value)" class="form-control shadow" placeholder="Buscar artistas">
+    </div>
+</div>
+<app-loading *ngIf = "loading"></app-loading>
+<app-cards *ngIf = "!loading" [Items]='resultados'></app-cards>
+
